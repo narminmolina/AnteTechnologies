@@ -1,0 +1,304 @@
+//  Mixin for loading fonts.
+//  Credits: Bourbon.
+//  @include font-face();
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false) {
+    @font-face {
+      font-family: $font-family;
+      font-weight: $weight;
+      font-style: $style;
+      @if $asset-pipeline==true {
+        src:
+        local("#{$font-family}"),
+        url("#{$file-path}.woff") format("woff"),
+        url("#{$file-path}.woff2") format("woff2");
+      }
+      @else {
+        src:
+        local("#{$font-family}"),
+        url("#{$file-path}.woff") format("woff"),
+        url("#{$file-path}.woff2") format("woff2");
+      }
+    }
+}
+
+//  Mixin for generating ::selection rules for selected text.
+//
+//  @include selection;
+@mixin selection {
+    ::selection { @content; }
+    ::-moz-selection { @content; }
+}
+
+//  Mixin for styling placeholders in HTML5 form elements.
+//
+//  @include placeholder;
+@mixin placeholder {
+    ::placeholder { @content; }
+    :-moz-placeholder { @content; }
+    ::-moz-placeholder { @content; }
+    :-ms-input-placeholder { @content; }
+    ::-webkit-input-placeholder { @content; }
+}
+
+// Mixin to customize scrollbars. [Beware, this does not work in all browsers.]
+// Credits: Hugo Giraudel.
+// @include scrollbars();
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+    // For Google Chrome
+    ::-webkit-scrollbar {
+        width:  $size;
+        height: $size;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $foreground-color;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: $background-color;
+    }
+
+    // For Internet Explorer
+    body {
+      scrollbar-face-color: $foreground-color;
+      scrollbar-track-color: $background-color;
+    }
+}
+
+// Resetting text styles...
+//
+// @include reset-text;
+@mixin reset-text {
+    font-family: $default-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+    font-style: normal;
+    //
+    text-align: left;
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    //
+    line-height: 1.5;
+    letter-spacing: normal;
+    line-break: auto;
+    //
+    word-break: normal;
+    word-spacing: normal;
+    white-space: normal;
+}
+
+@mixin text-normal {
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// @include sr-only;
+// Only display content to screen readers...
+@mixin sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+    border: 0;
+}
+
+// @include truncate;
+// Truncate text...
+@mixin truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+//  Mixin for resetting lists.
+//
+//  @include list-s-none;
+@mixin list-s-none {
+    padding-left: 0;
+    list-style: none;
+}
+
+
+
+// Mixin for the Pseudo elements ::before, ::after...
+//
+// @include pseudo();
+@mixin pseudo($content: '', $display: block, $pos: absolute) {
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+// Mixin for the element to self-clears its children.
+//
+// @include clearfix;
+@mixin clearfix {
+    &::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}
+
+// Centering elements vertically, horizontally, or for both positions...
+//
+// @include centering;
+@mixin centering($position) {
+    position: absolute;
+    @if $position=='vertical' {
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    @else if $position=='horizontal' {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translate(-50%);
+    }
+    @else if $position=='both' {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}
+
+// $direction: up, down, left, right...
+//
+// @include triangle;
+@mixin triangle($direction, $size: 6px, $color: #222) {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 0;
+    width: 0;
+    @if ($direction=='up') {
+        border-bottom: $size solid $color;
+        border-left: 1/2*$size solid transparent;
+        border-right: 1/2*$size solid transparent;
+    }
+    @else if ($direction=='down') {
+        border-top: $size solid $color;
+        border-left: 1/2*$size solid transparent;
+        border-right: 1/2*$size solid transparent;
+    }
+    @else if ($direction=='left') {
+        border-top: 1/2*$size solid transparent;
+        border-bottom: 1/2*$size solid transparent;
+        border-right: $size solid $color;
+    }
+    @else if ($direction=='right') {
+        border-top: 1/2*$size solid transparent;
+        border-bottom: 1/2*$size solid transparent;
+        border-left: $size solid $color;
+    }
+}
+
+
+@mixin hover-focus-active {
+    &:hover,
+    &:focus,
+    &.active {
+      @content;
+    }
+  }
+
+  // Burger
+
+// Burger
+@mixin burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
+    $burger-height: $height !global;
+    $burger-gutter: $gutter !global;
+  
+    position: relative;
+    margin-top: $height + $gutter;
+    margin-bottom: $height + $gutter;
+    select: none;
+  
+    &, &::before, &::after {
+        display: block;
+        width: $width;
+        height: $height;
+        background-color: $color;
+        outline: 1px solid transparent; // 1
+        @if $border-radius != 0 {
+          border-radius: $border-radius;
+        }
+        transition-property: background-color, transform;
+        transition-duration: $transition-duration;
+    }
+  
+    &::before, &::after {
+        position: absolute;
+        content: "";
+    }
+  
+    &::before {
+        top: -($height + $gutter);
+    }
+  
+    &::after {
+        top: $height + $gutter;
+    }
+  }
+  
+  
+  // Select parts of the burger
+  @mixin burger-parts {
+    &, &::before, &::after {
+        @content;
+    }
+  }
+  
+  @mixin burger-top {
+    &::before {
+        @content;
+    }
+  }
+  
+  @mixin burger-middle {
+    & {
+        @content;
+    }
+  }
+  
+  @mixin burger-bottom {
+    &::after {
+        @content;
+    }
+  }
+  
+  
+  // Burger animations
+  @mixin burger-to-cross($color: auto) {
+    & {
+        background-color: transparent;
+    }
+    @if ($color != auto) {
+        &::before, &::after {
+            background-color: $color;
+        }
+    }
+    &::before {
+      transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+    }
+    &::after {
+      transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+    }
+  }

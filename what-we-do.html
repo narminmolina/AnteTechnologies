@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ante Technologies</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, shrink-to-fit=no" />
+  <!-- Perfecting, Preloading & Preconnecting -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="prefetch" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,800|ZCOOL+XiaoWei" crossorigin />
+  <link rel="subresource" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,800|ZCOOL+XiaoWei" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,800|ZCOOL+XiaoWei" as="style" />
+  <link rel="preload" href="css/main.min.css" as="style" />
+  <!-- Some SEO Tags -->
+  <link rel="index" href="https://antetechnologies.com/" />
+  <link rel="canonical" href="https://antetechnologies.com/" />
+  <meta name="description" content="Ante Technologies is a rapidly growing startup that quickly established itself as one of the top 5 affiliate marketing companies globally." />
+  <!-- Facebook -->
+  <meta property="og:description" content="Ante Technologies is a rapidly growing startup that quickly established itself as one of the top 5 affiliate marketing companies globally." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ante Technologies" />
+  <meta property="og:image" content="/img/smm-image.jpg" />
+  <meta property="og:url" content="https://antetechnologies.com/" />
+  <meta property="og:site_name" content="Ante Technologies" />
+  <meta property="og:see_also" content="https://antetechnologies.com/about-us/" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="https://antetechnologies.com/" />
+  <meta name="twitter:title" content="Ante Technologies" />
+  <meta name="twitter:description" content="Ante Technologies is a rapidly growing startup that quickly established itself as one of the top 5 affiliate marketing companies globally." />
+  <meta name="twitter:image" content="/img/smm-image.jpg" />
+  <!-- Installation Credentials for the Website -->
+  <meta name="theme-color" content="#fff" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="Ante Technologies" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <!-- Favicons -->
+  <link rel="icon" href="img/favicons/favicon-32x32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon-180x180.png" type="image/png" sizes="180x180" />
+  <link rel="shortcut icon" href="/img/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="mask-icon" href="/img/favicons/favicon.svg" type="image/svg+xml" color="#ffffff" />
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,800|ZCOOL+XiaoWei" />
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="css/main.min.css" />
+  <script src='https://www.google.com/recaptcha/api.js?render=6LefDIwUAAAAAAflXB-3Sk3TWIaoePwZjIuMfm8r'></script>
+  <script>
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6LefDIwUAAAAAAflXB-3Sk3TWIaoePwZjIuMfm8r', { action: 'homepage' })
+        .then(function (token) {
+          var recaptchaResponse = document.getElementById('recaptchaResponse');
+          if (recaptchaResponse) {
+            recaptchaResponse.value = token;
+            console.log(recaptchaResponse);
+          }
+        });
+    });
+  </script>
+</head>
+
+<body>
+  <!-- Preloader -->
+  <style>
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      opacity: 1;
+      will-change: opacity;
+      transition: opacity 0.4s ease;
+    }
+  
+    .preloader svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -60px;
+      margin-left: -60px;
+      height: 120px;
+      width: 120px;
+      overflow: visible;
+      opacity: 1;
+      transform: scale(1);
+      will-change: opacity, transform;
+      transition: opacity 0.4s ease 0.2s, transform 0.6s ease;
+    }
+  
+    .loaded .preloader {
+      opacity: 0;
+      transition: opacity 0.4s ease 0.6s;
+    }
+  
+    .loaded .preloader svg {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  
+    .preloader-circle {
+      transform-origin: 60px 60px;
+      fill: #000;
+      animation: opacity 1.2s linear infinite;
+      fill-opacity: 1;
+      animation-name: opacity, colors;
+    }
+  
+    .preloader-circle:nth-child(12n + 1) {
+      animation-delay: -0.1s;
+      transform: rotate(-30deg) translate(5px, 5px) scale(0.9);
+    }
+  
+    .preloader-circle:nth-child(12n + 2) {
+      animation-delay: -0.2s;
+      transform: rotate(-60deg) translate(5px, 5px) scale(0.9);
+    }
+  
+    .preloader-circle:nth-child(12n + 3) {
+      animation-delay: -0.3s;
+      transform: rotate(-90deg) translate(5px, 5px) scale(0.9);
+    }
+  
+    .preloader-circle:nth-child(12n + 4) {
+      animation-delay: -0.4s;
+      transform: rotate(-120deg) translate(5px, 5px) scale(0.9);
+    }
+  
+    .preloader-circle:nth-child(12n + 5) {
+      animation-delay: -0.5s;
+      transform: rotate(-150deg) translate(5px, 5px) scale(0.9);
+    }
+  
+    .preloader-circle:nth-child(12n + 6) {
+      animation-delay: -0.6s;
+      transform: rotate(-180deg) translate(5px, 5px) scale(0.9);
+    }
+  
+    .preloader-circle:nth-child(12n + 7) {
+      animation-delay: -0.7s;
+      transform: rotate(-210deg) translate(5px, 5px) scale(0.9);
+    }
+  
+    .preloader-circle:nth-child(12n + 8) {
+      animation-delay: -0.8s;
+      transform: rotate(-240deg) translate(5px, 5px) scale(0.9);
+    }
+  
+    .preloader-circle:nth-child(12n + 9) {
+      animation-delay: -0.9s;
+      transform: rotate(-270deg) translate(5px, 5px) scale(0.9);
+    }
+  
+    .preloader-circle:nth-child(12n + 10) {
+      animation-delay: -1s;
+      transform: rotate(-300deg) translate(5px, 5px) scale(0.9);
+    }
+  
+    .preloader-circle:nth-child(12n + 11) {
+      animation-delay: -1.1s;
+      transform: rotate(-330deg) translate(5px, 5px) scale(0.9);
+    }
+  
+    .preloader-circle:nth-child(12n + 12) {
+      animation-delay: -1.2s;
+      transform: rotate(-360deg) translate(5px, 5px) scale(0.9);
+    }
+  
+    @keyframes opacity {
+      0% {
+        fill-opacity: 1;
+      }
+  
+      83% {
+        fill-opacity: 0;
+      }
+    }
+  
+    @keyframes colors {
+      0% {
+        fill: #004ca0;
+      }
+  
+      50%,
+      60% {
+        fill: #ff4e22;
+      }
+  
+      40%,
+      70% {
+        fill: #ffcb24;
+      }
+  
+      30%,
+      80% {
+        fill: #a6e233;
+      }
+  
+      20%,
+      90% {
+        fill: #00cccc;
+      }
+  
+      10%,
+      100% {
+        fill: #007ecc;
+      }
+    }
+  </style>
+  <div class="preloader">
+    <svg viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g class="preloader-circles">
+        <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+        <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+        <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+        <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+        <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+        <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+        <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+        <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+        <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+        <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+        <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+        <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      </g>
+    </svg>
+  </div>
+  <!-- /Preloader -->
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <a href="/" title="Home"><img src="img/logo.svg" alt="Ante Technologies Logo" /></a>
+    </div>
+    <nav class="header-nav">
+      <ul class="">
+        <li><a class="header-active" href="/" title="Home">Home</a></li>
+        <li><a class="" href="about.html" title="">About Us</a></li>
+        <li><a class="" href="what-we-do.html" title="">What We Do</a></li>
+        <li><a class="" href="careers.html" title="Careers">Careers</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-sticky" href="what-we-do.html#partner-with-us-form"><span class="text">Partner with Us</span></a>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <ul class="">
+        <li><a class="mobile-active" href="/" title="">Home</a></li>
+        <li><a class="" href="about.html" title="">About Us</a></li>
+        <li><a class="" href="what-we-do.html" title="">What We Do</a></li>
+        <li><a class="" href="careers.html" title="">Careers</a></li>
+        <li><a class="" href="contact.html" title="">Contact Us</a></li>
+        <li><a class="" href="what-we-do.html#partner-with-us-form" title="">Partner with Us</a></li>
+      </ul>
+    </div>
+    <button class="burger">
+      <span></span>
+    </button>
+    <!-- /Mobile Menu -->
+  </header>
+  <!-- /Header -->
+  <!-- Main -->
+  <main class="main">
+
+</body>
+
+</html>
+
+<!-- What We Do -->
+<section class="what-we-do">
+  <!-- What We Do Bubbles -->
+  <section class="bubbles">
+    <div class="what-we-do-red"></div>
+    <div class="what-we-do-couple"></div>
+    <div class="arrow-person"></div>
+  </section>
+  <!-- /What We Do Bubbles -->
+  <!-- Info Text -->
+  <section class="info-text container">
+    <div class="row">
+      <h1 class="info-text-title">Marketing & Strategy</h1>
+      <div class="text-blocks">
+        <div class="info-text-parts">
+          <p>
+            We are experts in developing multi-channel strategic online
+            marketing campaigns with international and local reach. Our
+            worldwide partners vary across a wide spectrum of industries
+            including online gaming, finance, Forex, web development and online
+            dating each with a variety of targets and objectives. Based on our
+            core approach to marketing strategy, we dedicate a lot of resource
+            to the analysis, understanding our partner brand, products/services,
+            business, customer demographic, target reach and competition. We
+            implement the powerful marketing campaigns with the right blend of
+            digital marketing strategies, data analysis and user driven tech
+            innovations.
+          </p>
+        </div>
+        <div class="info-text-parts">
+          <p>
+            Our methodical planning and strategizing, innovation tactics before
+            setting up the campaigns are what proudly sets us apart from many
+            multinational companies around the world. There are no objectives
+            that are too big for us. Although we align the realistic set of
+            targets, we often thrive in the deep end of challenging levels. Our
+            marketing team consists of individuals from diverse nationalities
+            and backgrounds. Most of the members of our marketing department
+            previously worked in leading multinational tech company that
+            significantly contributed to their in-depth understanding of digital
+            marketing and years of experience in the industry. Every member add
+            their unique super-power to working process for extraordinary
+            results.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <h1 class="info-text-title">Web Technologies</h1>
+      <div class="text-blocks">
+        <div class="info-text-parts">
+          <p>
+            With a team of highly competent engineers, designers and developers
+            we create, design and develop websites to market our clients whilst
+            making sure the final product stands out against the competition. At
+            the core of our responsive and adaptive web design stands the key
+            approach of accessibility, usability and user navigation. Once the
+            design is finalized, it becomes the goal of our developers to turn
+            the whole creative concept into a fully-functional digital platform
+            accessible across all devices. Our tech team ensures the websites
+            pull together our partner’s brand, appeal to the target users and
+            increase the impact of any campaign for the varied industries.
+          </p>
+        </div>
+        <div class="info-text-parts">
+          <p>
+            As a competitive design is not only interface related for us,
+            designing a feature-ready scalable backend infrastructure takes our
+            whole tech workflow to an advanced level. Our world-class engineers,
+            developers and designers constantly track for new developments that
+            lead our digital products to latest technologies. With a clear
+            targeted product focus, our conversion-friendly websites are in
+            constant update tailored to industry trends. We have established the
+            professional web presence for our partners across various industries
+            worldwide. Putting our strategic marketing targets at the heart of
+            the design and development process results with top quality websites
+            that is followed by high-conversions and valuable traffic.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <h1 class="info-text-title">User Acquisition</h1>
+      <div class="text-blocks">
+        <div class="info-text-parts">
+          <p>
+            To click or not to click? That’s the question we answer the best way
+            with generating high-quality leads. We implement a broad range of
+            marketing strategies to create a comprehensive user acquisition to
+            diverse industry products. Partnering with international brands with
+            the maximized ROI goals and targets on a global scale, we don’t take
+            boundaries as a challenge when it comes to user acquisition. We are
+            an expert turning the paid marketing budgets into valuable users and
+            revenue. Our user acquisition competency is not limited to English
+            speaking countries only. We have a team that is experienced in
+            acquiring users from over 30 countries around the world.
+          </p>
+        </div>
+        <div class="info-text-parts">
+          <p>
+            We do diverse geo based research, determine the strategy based on
+            the partner’s target reach, user demographic and product, then
+            create a new edge in the competitive marketplace. We help our
+            partners with competitor analysis, improving user experience and
+            content marketing to create brand awareness that ultimately
+            generates demand. We analyze our competitors, we build more
+            effective digital marketing campaigns and we defeat them with our
+            custom-tailored business goals. We are proud to assist the well
+            respected brands - our partners worldwide with complex digital
+            marketing environment and technology challenges. All the strategic
+            “roads” in our user acquisition expertise lead to high-conversions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Info Text -->
+  <!-- Our Works -->
+  <section class="our-works btn-sticky-end">
+    <div class="section-title">
+      <h2>Some of our works</h2>
+      <p>
+        You can visit some of our websites in online dating, finance, Forex and
+        web development verticals based on different geos.
+      </p>
+    </div>
+    <div id="worksSwiper" class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <figure class="swiper-slide-card">
+            <a href="#0" target="_blank" rel="noopener" class="swiper-slide-image-wrapper">
+              <div class="swiper-slide-image" style="background-image: url('https://picsum.photos/850/420/?image=967');" role="img" aria-label="alt text"></div>
+            </a>
+            <a href="#0" target="_blank" rel="noopener" class="btn-form swiper-slide-visit">Visit Website</a>
+          </figure>
+          <div class="swiper-nav-arrow" data-to="slide"></div>
+        </div>
+        <div class="swiper-slide">
+          <figure class="swiper-slide-card">
+            <a href="#0" target="_blank" rel="noopener" class="swiper-slide-image-wrapper">
+              <div class="swiper-slide-image" style="background-image: url('https://picsum.photos/850/420/?image=967');" role="img" aria-label="alt text"></div>
+            </a>
+            <a href="#0" target="_blank" rel="noopener" class="btn-form swiper-slide-visit">Visit Website</a>
+          </figure>
+          <div class="swiper-nav-arrow" data-to="slide"></div>
+        </div>
+        <div class="swiper-slide">
+          <figure class="swiper-slide-card">
+            <a href="#0" target="_blank" rel="noopener" class="swiper-slide-image-wrapper">
+              <div class="swiper-slide-image" style="background-image: url('https://picsum.photos/850/420/?image=967');" role="img" aria-label="alt text"></div>
+            </a>
+            <a href="#0" target="_blank" rel="noopener" class="btn-form swiper-slide-visit">Visit Website</a>
+          </figure>
+          <div class="swiper-nav-arrow" data-to="slide"></div>
+        </div>
+        <div class="swiper-slide">
+          <figure class="swiper-slide-card">
+            <a href="#0" target="_blank" rel="noopener" class="swiper-slide-image-wrapper">
+              <div class="swiper-slide-image" style="background-image: url('https://picsum.photos/850/420/?image=967');" role="img" aria-label="alt text"></div>
+            </a>
+            <a href="#0" target="_blank" rel="noopener" class="btn-form swiper-slide-visit">Visit Website</a>
+          </figure>
+          <div class="swiper-nav-arrow" data-to="slide"></div>
+        </div>
+        <div class="swiper-slide">
+          <figure class="swiper-slide-card">
+            <a href="#0" target="_blank" rel="noopener" class="swiper-slide-image-wrapper">
+              <div class="swiper-slide-image" style="background-image: url('https://picsum.photos/850/420/?image=967');" role="img" aria-label="alt text"></div>
+            </a>
+            <a href="#0" target="_blank" rel="noopener" class="btn-form swiper-slide-visit">Visit Website</a>
+          </figure>
+          <div class="swiper-nav-arrow" data-to="slide"></div>
+        </div>
+        <div class="swiper-slide">
+          <figure class="swiper-slide-card">
+            <a href="#0" target="_blank" rel="noopener" class="swiper-slide-image-wrapper">
+              <div class="swiper-slide-image" style="background-image: url('https://picsum.photos/850/420/?image=967');" role="img" aria-label="alt text"></div>
+            </a>
+            <a href="#0" target="_blank" rel="noopener" class="btn-form swiper-slide-visit">Visit Website</a>
+          </figure>
+          <div class="swiper-nav-arrow" data-to="slide"></div>
+        </div>
+      </div>
+      <div class="swiper-nav">
+        <div class="swiper-nav-arrow swiper-prev" data-to="prev"></div>
+        <div class="swiper-nav-arrow swiper-next" data-to="next"></div>
+      </div>
+      <div class="swiper-dots"></div>
+      <div class="swiper-nav-arrow swiper-start" data-to="start"></div>
+    </div>
+  </section>
+  <!-- /Our Works -->
+  <!-- Partner with Us -->
+  <section class="partner-with-us" id="partner-with-us-form">
+    <div class="bottom-bubbles">
+      <div class="green-couple"></div>
+      <div class="bottom-couple"></div>
+    </div>
+    <div class="container">
+      <div class="section-title">
+        <h2>Partner with Us</h2>
+        <p>
+          If you think this role is for you, please send us your CV. We do not
+          require a cover letter, but you may send one to support your
+          application if you wish to do so.
+        </p>
+      </div>
+      <form class="form" id="partner-form" name="partner-form" action="" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input class="form-control" id="firstName" name="firstName" type="text" required data-validation="required" />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input class="form-control" id="lastName" name="lastName" type="text" required data-validation="required" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Work E-mail</label>
+            <input class="form-control" id="email" name="email" type="email" data-validation="email" required data-validation="required" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input class="form-control" id="phone" name="phone" data-validation="number" required data-validation="required" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="additionalInfo">Any specific information you’re looking for?</label>
+            <textarea class="form-control" id="additionalInfo" name="additionalInfo" required data-validation="required"></textarea>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <div class="btn-block">
+              <button type="submit" class="btn-form">
+                Submit Your Request
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div id="form-messages">
+        <img src="img/layers/success.svg" alt="Success" />
+        <strong>Thank you for getting in touch!</strong>
+        <p>
+          We appreciate you contacting us. One of our colleagues will get back to you
+          shortly.
+        </p>
+        <p>Have a great day!</p>
+        <a href="/" class="btn-form">&nbsp; Return to Homepage &nbsp;</a>
+      </div>
+    </div>
+  </section>
+  <!-- /Partner with Us -->
+</section>
+<!-- /What We Do -->
+
+</main>
+<!-- /Main -->
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-flex">
+      <div class="logo">
+        <a href="/" title=""><img src="img/logo.svg" alt="Ante Technologies Logo" /></a>
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li><a class="footer-active" href="/" title="">Home</a></li>
+          <li><a class="" href="what-we-do.html" title="">What We Do</a></li>
+          <li><a class="" href="about.html" title="">About Us</a></li>
+          <li><a class="" href="careers.html" title="">Careers</a></li>
+          <li><a class="" href="contact.html" title="">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>
+<!-- /Footer -->
+<!-- JavaScript Files -->
+<script src="js/vendors.min.js"></script>
+<script src="js/core.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4SgjsTpN_D4nuu-O2Dn8f5aeK7dLjwoQ&callback=initMap&language=en" async defer></script>
+</body>
+
+</html>
