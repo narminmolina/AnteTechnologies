@@ -3,4 +3,34 @@
                   =   Header   =
 =====================================================
 */
-
+header {
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px 40px;
+    gap: 270px;
+    width: 100%;
+    font-size: 14px;
+    .logo {
+      a {
+        img {
+          width: 116px;
+          height: 40px;
+        }
+      }
+    }
+    .header-nav {
+      display: flex;
+      gap: 30px;
+      & > ul {
+        display: flex;
+        gap: 30px;
+        padding: 0;
+        list-style: none;
+        margin: 0px;
+      }
+      .btn-sticky{}
+    }
+  }
+}
