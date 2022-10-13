@@ -318,7 +318,7 @@ template {
                   =   Header   =
 =====================================================
 */
-header .header-wrapper {
+.header-footer-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -326,23 +326,40 @@ header .header-wrapper {
   gap: 270px;
   width: 100%;
   font-size: 14px; }
-  header .header-wrapper .logo a img {
+  .header-footer-wrapper .logo a img {
     width: 116px;
     height: 40px; }
-  header .header-wrapper .header-nav {
+  .header-footer-wrapper .header-footer-nav {
     display: flex;
-    gap: 30px; }
-    header .header-wrapper .header-nav > ul {
+    gap: 30px;
+    align-items: center; }
+    .header-footer-wrapper .header-footer-nav > ul {
       display: flex;
       gap: 30px;
       padding: 0;
       list-style: none;
       margin: 0px; }
+    .header-footer-wrapper .header-footer-nav .btn-sticky {
+      cursor: pointer;
+      font-weight: 500;
+      color: #f3752c;
+      background-color: transparent;
+      padding: 5px 25px;
+      border: 1px solid #f3752c;
+      border-radius: 25px; }
 
-/*!
-=====================================================
-               =   Footer   =
-=====================================================
-*/
+footer {
+  padding: 70px 0;
+  background-color: #f5f5f5; }
+  footer .contact-btn {
+    padding: 5px 15px;
+    border: 1px solid #000;
+    border-radius: 15px; }
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto; }
 
 /*# sourceMappingURL=style.css.map */

@@ -7,7 +7,6 @@
 =====================================================
 */
 
-
 /*!
 =====================================================
                  =   MainCSS   =
@@ -16,3 +15,10 @@
 @import 'libs/libs';
 @import 'partials/partials';
 @import 'pages/pages';
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
