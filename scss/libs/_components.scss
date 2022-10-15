@@ -1,0 +1,21 @@
+//Section title
+
+.section-title {
+  text-align: center;
+
+  h1 {
+    font-family: $second-font;
+    font-size: 30px;
+    font-weight: normal;
+  }
+
+  p {
+    max-width: 450px;
+    color: $gray;
+    margin: 0 auto;
+    line-height: 1.33;
+  }
+}
+
+// Buttons
+

@@ -313,6 +313,18 @@ template {
                  =   MainCSS   =
 =====================================================
 */
+.section-title {
+  text-align: center; }
+  .section-title h1 {
+    font-family: "ZCOOL XiaoWei";
+    font-size: 30px;
+    font-weight: normal; }
+  .section-title p {
+    max-width: 450px;
+    color: #919aa3;
+    margin: 0 auto;
+    line-height: 1.33; }
+
 /*!
 =====================================================
                   =   Header   =
@@ -351,10 +363,75 @@ template {
 footer {
   padding: 70px 0;
   background-color: #f5f5f5; }
+  footer .header-footer-wrapper {
+    padding: 0px; }
   footer .contact-btn {
     padding: 5px 15px;
     border: 1px solid #000;
     border-radius: 15px; }
+
+/*!
+=====================================================
+                    =   Index   =
+=====================================================
+*/
+.jumbotron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 100px 110px; }
+  .jumbotron .jumbotron-text {
+    min-width: 505px;
+    margin-left: 80px; }
+    .jumbotron .jumbotron-text h1 {
+      font-family: "ZCOOL XiaoWei";
+      font-size: 55px;
+      font-weight: 400;
+      line-height: 0.9;
+      margin-bottom: 15px; }
+    .jumbotron .jumbotron-text p {
+      max-width: 450px;
+      font-size: 16px;
+      line-height: 1.35;
+      opacity: 0.7;
+      margin: 0; }
+  .jumbotron .banner-animation #powerOfChoice {
+    width: 700px;
+    position: relative;
+    z-index: 2; }
+
+.we-offer .container .service-card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 70px 0; }
+  .we-offer .container .service-card-wrapper .service-card {
+    width: 350px;
+    padding: 50px 35px 30px;
+    border-radius: 15px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 10px 20px 0 rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s;
+    background-repeat: no-repeat; }
+    .we-offer .container .service-card-wrapper .service-card:hover {
+      box-shadow: 10px 15px 30px 0 rgba(0, 0, 0, 0.06); }
+    .we-offer .container .service-card-wrapper .service-card:first-child {
+      background-position: -40px -15px;
+      background-image: url(../imgs/bubbles/card/card-red.svg); }
+    .we-offer .container .service-card-wrapper .service-card:nth-child(2) {
+      margin: 0 35px;
+      background-position: 80% 100%;
+      background-image: url(../imgs/bubbles/card/card-green.svg); }
+    .we-offer .container .service-card-wrapper .service-card:last-child {
+      background-position: 100% 50%;
+      background-image: url(../imgs/bubbles/card/card-blue.svg); }
+    .we-offer .container .service-card-wrapper .service-card h2 {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: normal;
+      margin-bottom: 15px; }
+    .we-offer .container .service-card-wrapper .service-card p {
+      color: #919aa3;
+      line-height: 1.5;
+      margin-bottom: 0; }
 
 .container {
   max-width: 1000px;
