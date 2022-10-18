@@ -1,0 +1,45 @@
+.index-blue,
+.index-red,
+.index-green,
+.join-us-blue,
+.red-couple,
+.what-we-do-red,
+.what-we-do-couple,
+.arrow-person,
+.flying-person-1,
+.flying-person-2,
+.about-bubble,
+.small-red,
+.green-couple,
+.bottom-couple,
+.top-blue,
+.right-blue {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  z-index: 5;
+}
+
+.index-red {
+  top: 288px;
+  left: 0;
+  width: 139px;
+  height: 277px;
+  background-image: url(../imgs/bubbles/index/index-red.svg);
+}
+
+.index-blue {
+  top: 0;
+  left: 281px;
+  width: 390px;
+  height: 225px;
+  background-image: url(../imgs/bubbles/index/index-blue.svg);
+}
+
+.index-green {
+  top: 137px;
+  right: 0;
+  width: 121px;
+  height: 275px;
+  background-image: url(../imgs/bubbles/index/index-green.svg);
+}
