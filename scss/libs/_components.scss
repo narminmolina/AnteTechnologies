@@ -1,0 +1,104 @@
+//Section title
+
+.section-title {
+  text-align: center;
+
+  h1 {
+    font-family: $second-font;
+    font-size: 30px;
+    font-weight: normal;
+  }
+
+  p {
+    max-width: 450px;
+    color: $gray;
+    margin: 0 auto;
+    line-height: 1.33;
+  }
+}
+
+// Buttons
+
+.section-btn {
+  text-align: center;
+}
+.btn {
+  display: inline-block;
+  font-size: $ftz-normal;
+  font-weight: $fw-600;
+  border-radius: 25px;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  align-self: left;
+  transform: translateZ(0);
+  transition: color 0.45s cubic-bezier(0.475, 0.425, 0, 0.995);
+
+  &:before {
+    content: '';
+    width: 110%;
+    height: 110%;
+    border-radius: 26px;
+    position: absolute;
+    transition: transform 0.45s cubic-bezier(0.835, -0.005, 0.06, 1);
+    transform-origin: right;
+    transform: scaleX(0);
+    left: -5%;
+    will-change: transform;
+    z-index: 1;
+  }
+
+  &.active,
+  &:hover {
+    color: #fff;
+
+    &:before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: progress;
+  }
+
+  .text {
+    position: relative;
+    z-index: 2;
+  }
+}
+.btn-fill {
+  cursor: pointer;
+  border: 2px solid $black;
+  height: 55px;
+  padding: 0 50px;
+  line-height: 52px;
+
+  &:before {
+    background-color: #000;
+    color: white;
+  }
+}
+.btn-sticky {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #f3752c;
+  background-color: transparent;
+  padding: 5px 25px;
+  border: 1px solid #f3752c;
+  border-radius: $border-radius-25;
+
+  &:before {
+    top: 0;
+    background-color: $orange;
+  }
+}
+.fixed {
+  position: fixed;
+  top: 35px;
+  right: 40px;
+  width: 163.4px; // Magic number for btw actual size
+  z-index: 111;
+}
