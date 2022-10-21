@@ -369,6 +369,48 @@ template {
   height: 240px;
   background-image: url(../../assets/imgs/bubbles/red-couple.svg); }
 
+.about-bubble {
+  top: 0;
+  left: 279px;
+  width: 394px;
+  height: 221px;
+  background-image: url(../imgs/bubbles/other/about-bubble.svg); }
+
+.small-red {
+  top: 349px;
+  right: 104px;
+  width: 50px;
+  height: 50px;
+  background-image: url(../imgs/bubbles/other/small-red.svg); }
+
+.flying-person-1 {
+  top: 287px;
+  left: 32px;
+  width: 320px;
+  height: 83px;
+  background-image: url(../imgs/layers/flying-person-1.svg); }
+
+.flying-person-2 {
+  top: 147px;
+  right: 107px;
+  width: 320px;
+  height: 90px;
+  background-image: url(../imgs/layers/flying-person-2.svg); }
+
+.bottom-couple {
+  top: 120px;
+  right: 0;
+  width: 222px;
+  height: 508px;
+  background-image: url(../img/bubbles/other/bottom-couple.svg); }
+
+.green-couple {
+  top: 424px;
+  left: 0;
+  width: 116px;
+  height: 278px;
+  background-image: url(../img/bubbles/other/green-couple.svg); }
+
 .section-title {
   text-align: center; }
   .section-title h1 {
@@ -702,6 +744,87 @@ footer {
     transform: scale(1.04); }
     .tiny-card:hover .text::before {
       opacity: 1; }
+
+.info-text {
+  margin-top: 190px;
+  margin-bottom: 100px; }
+  .info-text .info-title {
+    font-family: "ZCOOL XiaoWei";
+    font-size: 55px;
+    font-weight: 400;
+    line-height: 0.91;
+    text-align: center;
+    margin-bottom: 55px;
+    padding: 0 160px; }
+  .info-text .text-blocks {
+    display: flex; }
+    .info-text .text-blocks .text-parts {
+      width: 48.5%;
+      margin-right: 20px; }
+
+.mission-statement {
+  position: relative;
+  padding-bottom: 50px;
+  text-align: center;
+  text-transform: uppercase; }
+  .mission-statement h2 {
+    font-size: 16px;
+    font-weight: normal; }
+  .mission-statement h1 {
+    position: relative;
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 1.29;
+    color: #48b5c2;
+    z-index: 10; }
+  .mission-statement .quote {
+    position: absolute;
+    top: -40px;
+    width: 170px;
+    height: 170px;
+    background-size: cover; }
+  .mission-statement .quote-left {
+    left: 0;
+    background-image: url("../imgs/layers/quote-left.svg"); }
+  .mission-statement .quote-right {
+    right: 0;
+    background-image: url("../imgs/layers/quote-right.svg"); }
+
+.team-spirit {
+  padding: 55px 0 75px;
+  background-color: #f5f5f5; }
+
+.marvelous-team {
+  position: relative;
+  padding: 75px 0 145px; }
+  .marvelous-team .section-title {
+    margin-bottom: 45px; }
+  .marvelous-team article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px; }
+    .marvelous-team article h1 {
+      width: 50%;
+      opacity: 0.2;
+      font-size: 50px;
+      font-weight: 800;
+      line-height: 0.4;
+      color: #919aa3;
+      text-transform: uppercase; }
+    .marvelous-team article p {
+      width: 50%;
+      font-size: 16px;
+      line-height: 1.33; }
+    .marvelous-team article:nth-child(even) h1 {
+      text-align: right; }
+    .marvelous-team article:nth-child(odd) {
+      flex-direction: row-reverse; }
+      .marvelous-team article:nth-child(odd) p {
+        text-align: right; }
+
+.section-btn {
+  margin-top: 70px; }
 
 .container {
   max-width: 1000px;
