@@ -449,6 +449,20 @@ template {
   height: 278px;
   background-image: url(../imgs/bubbles/other/green-couple.svg); }
 
+.top-blue {
+  top: 0;
+  left: 291px;
+  width: 316px;
+  height: 158px;
+  background-image: url(../imgs/bubbles/top-blue.svg); }
+
+.right-blue {
+  top: 100px;
+  right: 0;
+  width: 85px;
+  height: 250px;
+  background-image: url(../imgs/bubbles/right-blue.svg); }
+
 .section-title {
   text-align: center; }
   .section-title h1 {
@@ -932,6 +946,131 @@ footer {
 
 .section-btn {
   margin-top: 70px; }
+
+.careers-jumbotron {
+  position: relative;
+  top: 0;
+  overflow: hidden; }
+  .careers-jumbotron .jumbotron-content {
+    max-width: 720px;
+    position: absolute;
+    z-index: 10;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 540px; }
+    .careers-jumbotron .jumbotron-content h1 {
+      font-family: "ZCOOL XiaoWei";
+      font-size: 55px;
+      font-weight: normal;
+      line-height: 0.91;
+      margin-bottom: 15px;
+      padding: 0 30px; }
+    .careers-jumbotron .jumbotron-content p {
+      font-size: 18px;
+      color: #3F3E3E;
+      line-height: 1.35;
+      margin-bottom: 30px; }
+  .careers-jumbotron .background-animation {
+    width: 100%;
+    height: 100%; }
+    .careers-jumbotron .background-animation svg {
+      display: block; }
+
+.arrow-down {
+  font-size: 20px;
+  color: #000;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  z-index: 10; }
+
+.our-options {
+  margin: 70px 0px; }
+  .our-options .select-box-wrapper {
+    display: flex;
+    margin: 70px 0 45px; }
+    .our-options .select-box-wrapper .select-box {
+      position: relative; }
+      .our-options .select-box-wrapper .select-box:first-child {
+        margin-right: 30px; }
+      .our-options .select-box-wrapper .select-box:last-child {
+        margin-left: auto; }
+      .our-options .select-box-wrapper .select-box select {
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        padding: 11px 105px 11px 24px;
+        border-radius: 25px;
+        border: 2px solid #000;
+        background-color: #ffffff;
+        font-weight: 600; }
+      .our-options .select-box-wrapper .select-box::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        height: 8px;
+        width: 10px;
+        transform: translateY(-50%);
+        border-top: 8px solid #000;
+        border-right: 5px solid transparent;
+        border-left: 5px  solid transparent; }
+
+.vacancies .job {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 44px 50px 44px 26px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  background-color: #f5f5f5;
+  cursor: pointer; }
+  .vacancies .job h2,
+  .vacancies .job address,
+  .vacancies .job a {
+    font-size: 18px;
+    margin: 0; }
+  .vacancies .job h2 {
+    font-weight: 600; }
+    .vacancies .job h2 a {
+      cursor: none;
+      color: #000;
+      pointer-events: none; }
+  .vacancies .job address {
+    font-style: normal;
+    text-align: left; }
+  .vacancies .job > a {
+    font-weight: 600;
+    color: #0057d8;
+    text-align: right; }
+
+.benefits {
+  margin-bottom: 150px; }
+  .benefits .benefit-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 70px; }
+    .benefits .benefit-icons figure {
+      text-align: center;
+      width: 250px; }
+      .benefits .benefit-icons figure img {
+        transition: 0.3s ease-in-out; }
+        .benefits .benefit-icons figure img:hover {
+          transform: scale(1.1); }
+      .benefits .benefit-icons figure figcaption {
+        height: 45px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 0;
+        padding: 0 3px; }
 
 .container {
   max-width: 1000px;

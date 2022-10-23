@@ -1,0 +1,163 @@
+.careers-jumbotron {
+  position: relative;
+  top: 0;
+  // padding: 0 0 20% 0;
+  //not sure why is that
+  overflow: hidden;
+  .jumbotron-content {
+    max-width: 720px;
+    position: absolute;
+    z-index: 10;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 540px;
+
+    h1 {
+      font-family: $second-font;
+      font-size: 55px;
+      font-weight: normal;
+      line-height: 0.91;
+      margin-bottom: 15px;
+      padding: 0 30px;
+    }
+    p {
+      font-size: $ftz-large;
+      color: $md-gray;
+      line-height: 1.35;
+      margin-bottom: 30px;
+    }
+  }
+  .background-animation {
+    width: 100%;
+    height: 100%;
+    svg {
+      display: block;
+    }
+  }
+}
+.arrow-down {
+  font-size: 20px;
+  color: $black;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  z-index: 10;
+}
+
+.our-options {
+  margin: 70px 0px;
+  .select-box-wrapper {
+    display: flex;
+
+    margin: 70px 0 45px;
+    .select-box {
+      position: relative;
+      &:first-child {
+        margin-right: 30px;
+      }
+      &:last-child {
+        margin-left: auto;
+      }
+      select {
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        padding: 11px 105px 11px 24px;
+        border-radius: 25px;
+        border: 2px solid $black;
+        background-color: #ffffff;
+        font-weight: 600;
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        height: 8px;
+        width: 10px;
+        transform: translateY(-50%);
+        border-top: 8px solid #000;
+        border-right: 5px solid transparent;
+        border-left: 5px  solid transparent;
+      }
+    }
+  }
+}
+.vacancies {
+  .job {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 44px 50px 44px 26px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+
+    h2,
+    address,
+    a {
+      font-size: $ftz-large;
+      margin: 0;
+    }
+    h2 {
+      font-weight: 600;
+      a {
+        cursor: none;
+        color: #000;
+        pointer-events: none;
+
+      }
+    }
+    address {
+      font-style: normal;
+      text-align: left;
+    }
+
+    & > a {
+      font-weight: 600;
+      color: #0057d8;
+      text-align: right;
+
+    }
+  }
+}
+
+
+.benefits {
+  margin-bottom: 150px;
+
+  .benefit-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 70px;
+
+    figure {
+      text-align: center;
+      width: 250px;
+      img {
+        transition: 0.3s ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      figcaption {
+        height: 45px;
+        text-align: center;
+        font-size: $ftz-large;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 0;
+        padding: 0 3px;
+      }
+    }
+  }
+}
+
