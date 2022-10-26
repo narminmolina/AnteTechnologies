@@ -23,11 +23,11 @@ ready(() => {
   function setVars() {
     navPos = btn.offset;
     // navHeight = btn.outerHeight(true);
-    // winPos = document.body.scrollTop;
+    winPos = document.body.scrollTop;
     winWidth = document.body.offsetWidth;
     winHeight = document.body.offsetHeight;
     let buttonEnd = document.querySelector('.btn-sticky-end');
-    console.log(winPos);
+    console.log(navPos);
 
     // if (document.querySelector('.our-options').length > 0) careersSec = $('.our-options').offset.top;
 
@@ -60,15 +60,13 @@ ready(() => {
   window.addEventListener('scroll', stickButton);
 
   function stickButton() {
-    if (winPos > 0 && winPos < buttonEnd.offsetHeight && winWidth >= 992) {
+    if (window.scrollY < 1190) {
       button.classList.add('fixed', 'active');
       document.querySelector('.clone-btn-sticky').style.display = 'inline-block';
     } else {
       button.classList.remove('fixed', 'active');
+      document.querySelector('.clone-btn-sticky').style.display = 'none';
     }
-    // button.trigger('mouseenter');
-
-    // $('.clone-btn-sticky').hide();
   }
 });
 
