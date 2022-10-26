@@ -49,7 +49,24 @@
 
 <body>
   <!-- Preloader -->
-
+<div class="preloader">
+  <svg viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g class="preloader-circles">
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+    </g>
+  </svg>
+</div>
 
   <!-- /Preloader -->
   <!-- Header -->
@@ -196,7 +213,28 @@
         web development verticals based on different geos.
       </p>
     </div>
-    <div class="swiper"></div>
+     <div id="worksSwiper" class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+  <figure class="swiper-slide-card">
+    <a href="#0" target="_blank" rel="noopener" class="swiper-slide-image-wrapper">
+      <div class="swiper-slide-image" style="background-image: url('https://picsum.photos/850/420/?image=967');" role="img"
+        aria-label="alt text"></div>
+    </a>
+    <a href="#0" target="_blank" rel="noopener" class="btn btn-fill swiper-slide-visit">
+      <span class="text">Visit Website</span>
+    </a>
+  </figure>
+  <div class="swiper-nav-arrow" data-to="slide"></div>
+</div>
+      </div>
+      <div class="swiper-nav">
+        <div class="swiper-nav-arrow swiper-prev" data-to="prev"></div>
+        <div class="swiper-nav-arrow swiper-next" data-to="next"></div>
+      </div>
+      <div class="swiper-dots"></div>
+      <div class="swiper-nav-arrow swiper-start" data-to="start"></div>
+    </div>
   </section>
   <!-- /Our Works -->
   <!-- Partner with Us -->
@@ -282,9 +320,9 @@
     </footer>
 <!-- /Footer -->
 <!-- JavaScript Files -->
-<script src="js/vendors.min.js"></script>
-<script src="js/core.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4SgjsTpN_D4nuu-O2Dn8f5aeK7dLjwoQ&callback=initMap&language=en" async defer></script>
+<script src="./assets/scripts/libs/wow.js"></script>
+<script src="./assets/scripts/script.js"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4SgjsTpN_D4nuu-O2Dn8f5aeK7dLjwoQ&callback=initMap&language=en" async defer></script> -->
 </body>
 
 </html>

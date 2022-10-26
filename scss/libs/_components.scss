@@ -38,7 +38,7 @@
     content: '';
     width: 110%;
     height: 110%;
-    border-radius: 26px;
+    border-radius: 27px;
     position: absolute;
     transition: transform 0.45s cubic-bezier(0.835, -0.005, 0.06, 1);
     transform-origin: right;
@@ -118,4 +118,8 @@
   &:hover {
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
   }
+}
+.clone-btn-sticky {
+  width: 163.4px; // The same magic number
+  margin-left: 30px;
 }

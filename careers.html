@@ -48,7 +48,24 @@
 
   <body>
     <!-- Preloader -->
-
+<div class="preloader">
+  <svg viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g class="preloader-circles">
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+      <circle class="preloader-circle" r="10" cx="20" cy="20"></circle>
+    </g>
+  </svg>
+</div>
     <!-- /Preloader -->
     <!-- Header -->
     <header>
@@ -65,7 +82,7 @@
             <li><a href="./what-we-do.html">What We Do</a></li>
             <li><a href="./careers.html">Careers</a></li>
           </ul>
-          <!-- <div class="clone-btn-sticky" style="display: none"></div> -->
+          <div class="clone-btn-sticky" style="display: none"></div>
           <a href="./index.html" class="btn btn-sticky"> <span class="text">Partner with Us</span></a>
         </nav>
       </div>
@@ -98,43 +115,42 @@
           <h1>Open positions</h1>
           <p>You can check the current open positions in various departments of our company and start applying right now!</p>
         </div>
-          <div class="select-box-wrapper">
-      <div class="select-box">
-        <select name="location">
-          <option value="all">All locations</option>
-          <option value="dublin">Dublin</option>
-          <option value="baku">Baku</option>
-        </select>
-      </div>
-      <div class="select-box">
-        <select name="department">
-          <option value="all">All departments</option>
-          <option value="engineering">Engineering</option>
-          <option value="hr">HR</option>
-          <option value="commercial">Commercial</option>
-          <option value="finance">Finance</option>
-          <option value="marketing">Marketing</option>
-          <option value="bi">BI</option>
-        </select>
-      </div>
-      <div class="select-box">
-        <select name="datetime">
-          <option value="newest">Newest</option>
-          <option value="old">Old</option>
-        </select>
-      </div>
-    </div>
+        <div class="select-box-wrapper">
+          <div class="select-box">
+            <select name="location">
+              <option value="all">All locations</option>
+              <option value="dublin">Dublin</option>
+              <option value="baku">Baku</option>
+            </select>
+          </div>
+          <div class="select-box">
+            <select name="department">
+              <option value="all">All departments</option>
+              <option value="engineering">Engineering</option>
+              <option value="hr">HR</option>
+              <option value="commercial">Commercial</option>
+              <option value="finance">Finance</option>
+              <option value="marketing">Marketing</option>
+              <option value="bi">BI</option>
+            </select>
+          </div>
+          <div class="select-box">
+            <select name="datetime">
+              <option value="newest">Newest</option>
+              <option value="old">Old</option>
+            </select>
+          </div>
+        </div>
 
-    <div class="vacancies">
-      <div class="job" data-department="engineering" data-location="dublin">
-        <h2>
-          <a href="careers-inner.html#current-position-anchor">Junior Full Stack Software Engineer</a>
-        </h2>
-        <address>Dublin, Ireland</address>
-        <a href="careers-inner.html#current-position-anchor">Apply Now</a>
-      </div>
-
-    </div>
+        <div class="vacancies">
+          <div class="job" data-department="engineering" data-location="dublin">
+            <h2>
+              <a href="careers-inner.html#current-position-anchor">Junior Full Stack Software Engineer</a>
+            </h2>
+            <address>Dublin, Ireland</address>
+            <a href="careers-inner.html#current-position-anchor">Apply Now</a>
+          </div>
+        </div>
       </section>
       <section class="benefits container">
         <div class="section-title">
@@ -183,6 +199,7 @@
     </footer>
     <!-- /Footer -->
     <!-- JavaScript Files -->
+    <script src="./assets/scripts/libs/wow.js"></script>
     <script src="./assets/scripts/libs/swiper.min.js"></script>
     <script src="assets/scripts/script.js"></script>
   </body>

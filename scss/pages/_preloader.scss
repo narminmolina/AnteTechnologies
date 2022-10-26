@@ -1,0 +1,97 @@
+// Preloader
+$preloader-max: 12;
+$preloader-angle: 360 / $preloader-max;
+$preloader-size: 120px;
+$preloader-fill: #000;
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 1;
+  will-change: opacity;
+  transition: opacity 0.4s ease;
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -($preloader-size / 2);
+    margin-left: -($preloader-size / 2);
+    height: $preloader-size;
+    width: $preloader-size;
+    overflow: visible;
+    opacity: 1;
+    transform: scale(1);
+    will-change: opacity, transform;
+    transition: opacity 0.4s ease 0.2s, transform 0.6s ease;
+  }
+}
+
+.loaded .preloader {
+  opacity: 0;
+  transition: opacity 0.4s ease 0.6s;
+  svg {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@function transform($item: 1) {
+  $base: rotate(#{-$preloader-angle * $item}deg) translate(5px, 5px);
+  @return $base;
+}
+
+.preloader-circle {
+  transform-origin: $preloader-size/2 $preloader-size/2;
+  fill: $preloader-fill;
+  animation: opacity 1.2s linear infinite;
+  @for $item from 1 through $preloader-max {
+    &:nth-child(#{$preloader-max}n + #{$item}) {
+      animation-delay: -#{$item/10}s;
+      transform: transform($item) scale(0.9);
+    }
+  }
+
+  fill-opacity: 1;
+  animation-name: opacity, colors;
+}
+
+@keyframes opacity {
+  0% {
+    fill-opacity: 1;
+  }
+  83% {
+    fill-opacity: 0;
+  }
+}
+
+@keyframes colors {
+  0% {
+    fill: #004ca0;
+  }
+  50%,
+  60% {
+    fill: #ff4e22;
+  }
+  40%,
+  70% {
+    fill: #ffcb24;
+  }
+  30%,
+  80% {
+    fill: #a6e233;
+  }
+  20%,
+  90% {
+    fill: #00cccc;
+  }
+  10%,
+  100% {
+    fill: #007ecc;
+  }
+}
