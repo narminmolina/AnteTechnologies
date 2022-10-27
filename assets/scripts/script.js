@@ -12,7 +12,12 @@ ready(() => {
     careersSec,
     btnEndSec,
     btn = document.querySelector('.btn-sticky');
-  buttonEnd = document.querySelector('.btn-sticky-end');
+
+  if (document.querySelector('.btn-sticky-end')) {
+    buttonEnd = document.querySelector('.btn-sticky-end');
+  } else if (document.querySelector('.our-options')) {
+    buttonEnd = document.querySelector('.our-options');
+  } else return;
 
   function scrollTop(el, value) {
     if (value === undefined) {
@@ -41,8 +46,6 @@ ready(() => {
     return el.getBoundingClientRect().height + parseFloat(style.getPropertyValue('marginTop')) + parseFloat(style.getPropertyValue('marginBottom'));
   }
 
-  careersSec = offset(document.querySelector('.btn-sticky-end')).top;
-
   function setVars() {
     navPos = offset(btn).top;
     navHeight = outerHeight(btn);
@@ -52,8 +55,6 @@ ready(() => {
     if (buttonEnd) {
       btnEndSec = offset(buttonEnd).top - 70;
     }
-
-    //   document.querySelector('.clone-btn-sticky').style.display = 'inline-block';
 
     // if (document.querySelector('.our-options').length > 0) careersSec = $('.our-options').offset.top;
 
