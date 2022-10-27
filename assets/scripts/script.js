@@ -12,22 +12,48 @@ ready(() => {
     careersSec,
     btnEndSec,
     btn = document.querySelector('.btn-sticky');
+  buttonEnd = document.querySelector('.btn-sticky-end');
 
-  let rect = document.querySelector('body').getBoundingClientRect();
+  function scrollTop(el, value) {
+    if (value === undefined) {
+      return el.pageYOffset;
+    } else {
+      if (el === window || el.nodeType === 9) {
+        el.scrollTo(el.pageXOffset, value);
+      } else {
+        el.pageYOffset = value;
+      }
+    }
+  }
 
-  var offset = {
-    top: rect.top + window.scrollY,
-    left: rect.left + window.scrollX,
-  };
+  function offset(el) {
+    box = el.getBoundingClientRect();
+    docElem = document.documentElement;
+    return {
+      top: box.top + window.pageYOffset - docElem.clientTop,
+      left: box.left + window.pageXOffset - docElem.clientLeft,
+    };
+  }
+
+  function outerHeight(el) {
+    const style = getComputedStyle(el);
+
+    return el.getBoundingClientRect().height + parseFloat(style.getPropertyValue('marginTop')) + parseFloat(style.getPropertyValue('marginBottom'));
+  }
+
+  careersSec = offset(document.querySelector('.btn-sticky-end')).top;
 
   function setVars() {
-    navPos = btn.offset;
-    // navHeight = btn.outerHeight(true);
-    winPos = document.body.scrollTop;
-    winWidth = document.body.offsetWidth;
-    winHeight = document.body.offsetHeight;
-    let buttonEnd = document.querySelector('.btn-sticky-end');
-    console.log(navPos);
+    navPos = offset(btn).top;
+    navHeight = outerHeight(btn);
+    winPos = scrollTop(window);
+    winWidth = document.querySelector('body').getBoundingClientRect().width;
+    winHeight = document.querySelector('body').getBoundingClientRect().height;
+    if (buttonEnd) {
+      btnEndSec = offset(buttonEnd).top - 70;
+    }
+
+    //   document.querySelector('.clone-btn-sticky').style.display = 'inline-block';
 
     // if (document.querySelector('.our-options').length > 0) careersSec = $('.our-options').offset.top;
 
@@ -52,22 +78,18 @@ ready(() => {
   // **********************
   // Sticky Button ************
   // **********************
-
-  setVars();
-
-  let button = document.body.querySelector('.btn-sticky');
-
-  window.addEventListener('scroll', stickButton);
-
-  function stickButton() {
-    if (window.scrollY < 1190) {
-      button.classList.add('fixed', 'active');
+  window.addEventListener('resize', setVars);
+  // document.querySelector('body').addEventListener('resize', setVars);
+  window.addEventListener('scroll', function () {
+    setVars();
+    if (winPos > 0 && winPos < btnEndSec && winWidth > 992) {
+      btn.classList.add('fixed', 'active');
       document.querySelector('.clone-btn-sticky').style.display = 'inline-block';
     } else {
-      button.classList.remove('fixed', 'active');
+      btn.classList.remove('fixed', 'active');
       document.querySelector('.clone-btn-sticky').style.display = 'none';
     }
-  }
+  });
 });
 
 // **********************
