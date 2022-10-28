@@ -529,10 +529,12 @@ template {
   -webkit-animation-name: slideInRight;
   animation-name: slideInRight; }
 
-.flying-person-1, .flying-person-2 {
+.flying-person-1,
+.flying-person-2 {
   animation-name: float !important;
   animation-iteration-count: infinite; }
-  .flying-person-1:nth-child(3), .flying-person-2:nth-child(3) {
+  .flying-person-1:nth-child(3),
+  .flying-person-2:nth-child(3) {
     animation-delay: 0.3s; }
 
 @keyframes slideInRight {
@@ -558,6 +560,11 @@ template {
     transform: translatey(-10px); }
   100% {
     transform: translatey(0px); } }
+#powerOfChoice {
+  width: 700px;
+  position: relative;
+  z-index: 2; }
+
 .section-title {
   text-align: center; }
   .section-title h1 {
