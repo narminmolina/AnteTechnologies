@@ -1,13 +1,6 @@
-var countries,
-  joinUs,
-  partners,
-  powerOfChoice,
-  users,
-  countriesParams,
-  joinUsParams,
-  partnersParams,
-  powerOfChoiceParams,
-  usersParams;
+// import lottieWeb from 'https://cdn.skypack.dev/lottie-web';
+
+var countries, users, joinUs, partners, powerOfChoice, countriesParams, joinUsParams, partnersParams, powerOfChoiceParams, usersParams;
 
 var countriesID = document.getElementById('countries'),
   joinUsID = document.getElementById('joinUs'),
@@ -18,55 +11,70 @@ var countriesID = document.getElementById('countries'),
 countriesParams = {
   container: countriesID,
   renderer: 'svg',
-  loop: !0,
-  autoplay: !0,
-  animationData: countriesData
+  loop: true,
+  autoplay: true,
+  path: 'countries.json',
 };
 
 joinUsParams = {
   container: joinUsID,
   renderer: 'svg',
-  loop: !0,
-  autoplay: !0,
-  animationData: joinUsData
+  loop: true,
+  autoplay: true,
+  path: 'joinUs.json',
 };
 
 partnersParams = {
   container: partnersID,
   renderer: 'svg',
-  loop: !0,
-  autoplay: !0,
-  animationData: partnersData
+  loop: true,
+  autoplay: true,
+  path: 'partners.json',
 };
 
 powerOfChoiceParams = {
   container: powerOfChoiceID,
   renderer: 'svg',
-  loop: !0,
-  autoplay: !0,
-  animationData: powerOfChoiceData
+  loop: true,
+  autoplay: true,
+  path: 'powerOfChoice.json',
 };
 
 usersParams = {
   container: usersID,
   renderer: 'svg',
-  loop: !0,
-  autoplay: !0,
-  animationData: usersData
+  loop: true,
+  autoplay: true,
+  path: 'users.json',
 };
-
+if (powerOfChoiceID) {
+  powerOfChoice = bodymovin.loadAnimation(powerOfChoiceParams);
+}
 if (countriesID) {
-  countries = lottie.loadAnimation(countriesParams);
+  countries = bodymovin.loadAnimation(countriesParams);
 }
 if (joinUsID) {
-  joinUs = lottie.loadAnimation(joinUsParams);
+  joinUs = bodymovin.loadAnimation(joinUsParams);
 }
 if (partnersID) {
-  partners = lottie.loadAnimation(partnersParams);
+  partners = bodymovin.loadAnimation(partnersParams);
 }
-if (powerOfChoiceID) {
-  powerOfChoice = lottie.loadAnimation(powerOfChoiceParams);
-}
+
 if (usersID) {
-  users = lottie.loadAnimation(usersParams);
+  users = bodymovin.loadAnimation(usersParams);
 }
+// var animation = lottieWeb.loadAnimation({
+//   container: document.getElementById('powerOfChoice'), // Required
+//   path: 'data.json', // Required
+//   renderer: 'svg/canvas/html', // Required
+//   loop: true, // Optional
+//   autoplay: true, // Optional
+//   name: 'Hello World', // Name for future reference. Optional.
+// });
+lottie.loadAnimation({
+  container: powerOfChoiceID, // the dom element that will contain the animation
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'data.json', // the path to the animation json
+});

@@ -57,3 +57,110 @@
   height: 240px;
   background-image: url(../../assets/imgs/bubbles/red-couple.svg);
 }
+
+.about-bubble {
+  top: 0;
+  left: 279px;
+  width: 394px;
+  height: 221px;
+  background-image: url(../imgs/bubbles/other/about-bubble.svg);
+}
+
+.small-red {
+  top: 349px;
+  right: 104px;
+  width: 50px;
+  height: 50px;
+  background-image: url(../imgs/bubbles/other/small-red.svg);
+}
+
+.flying-person-1 {
+  top: 287px;
+  left: 32px;
+  width: 320px;
+  height: 83px;
+  background-image: url(../imgs/layers/flying-person-1.svg);
+}
+
+.flying-person-2 {
+  top: 147px;
+  right: 107px;
+  width: 320px;
+  height: 90px;
+  background-image: url(../imgs/layers/flying-person-2.svg);
+}
+
+.bottom-couple {
+  top: 120px;
+  right: 0;
+  width: 222px;
+  height: 508px;
+  background-image: url(../img/bubbles/other/bottom-couple.svg);
+}
+
+.green-couple {
+  top: 424px;
+  left: 0;
+  width: 116px;
+  height: 278px;
+  background-image: url(../img/bubbles/other/green-couple.svg);
+}
+
+.what-we-do-red {
+  top: 154px;
+  left: 0;
+  width: 91px;
+  height: 182px;
+  background-image: url(../imgs/bubbles/other/what-we-do-red.svg);
+}
+
+.what-we-do-couple {
+  top: 0;
+  left: 240px;
+  width: 400px;
+  height: 320px;
+  background-image: url(../imgs/bubbles/other/what-we-do-couple.svg);
+}
+
+.arrow-person {
+  top: 170px;
+  right: 0;
+  width: 221px;
+  height: 493px;
+  background-image: url(../imgs/layers/arrow-person.svg);
+  @media (max-width: 1340px) {
+    display: none;
+  }
+}
+
+.bottom-couple {
+  top: 120px;
+  right: 0;
+  width: 222px;
+  height: 508px;
+  background-image: url(../imgs/bubbles/other/bottom-couple.svg);
+}
+
+.green-couple {
+  top: 424px;
+  left: 0;
+  width: 116px;
+  height: 278px;
+  background-image: url(../imgs/bubbles/other/green-couple.svg);
+}
+
+.top-blue {
+  top: 0;
+  left: 291px;
+  width: 316px;
+  height: 158px;
+  background-image: url(../imgs/bubbles/top-blue.svg);
+}
+
+.right-blue {
+  top: 100px;
+  right: 0;
+  width: 85px;
+  height: 250px;
+  background-image: url(../imgs/bubbles/right-blue.svg);
+}
