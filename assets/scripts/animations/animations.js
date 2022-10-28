@@ -16,6 +16,8 @@ countriesParams = {
   path: 'countries.json',
 };
 
+
+
 joinUsParams = {
   container: joinUsID,
   renderer: 'svg',

@@ -123,3 +123,19 @@
   width: 163.4px; // The same magic number
   margin-left: 30px;
 }
+
+.swiper-container {
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .swiper-slide-card {
+      display: flex;
+      margin: 0;
+    }
+  }
+}
+
+
