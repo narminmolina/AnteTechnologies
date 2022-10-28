@@ -97,10 +97,9 @@
     text-align: center;
     div {
       margin-bottom: 30px;
-      img {
-        width: 260px;
-        height: 165px;
-      }
+
+      width: 260px;
+      height: 165px;
     }
     h2 {
       font-size: $ftz-extra-large;
@@ -191,7 +190,7 @@
     max-width: 720px;
     position: absolute;
     z-index: 10;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
   }

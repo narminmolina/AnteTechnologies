@@ -1,33 +1,22 @@
-let countries,
-  joinUs,
-  partners,
-  powerOfChoice,
-  users,
-  countriesParams,
-  joinUsParams,
-  partnersParams,
-  powerOfChoiceParams,
-  usersParams;
+let countries, joinUs, partners, powerOfChoice, users, countriesParams, joinUsParams, partnersParams, powerOfChoiceParams, usersParams;
 
-const countriesID = document.getElementById("countries"),
-  joinUsID = document.getElementById("joinUs"),
-  partnersID = document.getElementById("partners"),
-  powerOfChoiceID = document.getElementById("powerOfChoice"),
-  usersID = document.getElementById("users");
+const countriesID = document.getElementById('countries'),
+  joinUsID = document.getElementById('joinUs'),
+  partnersID = document.getElementById('partners'),
+  powerOfChoiceID = document.getElementById('powerOfChoice'),
+  usersID = document.getElementById('users');
 
 countriesParams = {
   container: countriesID,
-  renderer: "svg",
+  renderer: 'svg',
   loop: !0,
   autoplay: !0,
   animationData: countriesData,
 };
 
-
-
 joinUsParams = {
   container: joinUsID,
-  renderer: "svg",
+  renderer: 'svg',
   loop: !0,
   autoplay: !0,
   animationData: joinUsData,
@@ -35,7 +24,7 @@ joinUsParams = {
 
 partnersParams = {
   container: partnersID,
-  renderer: "svg",
+  renderer: 'svg',
   loop: !0,
   autoplay: !0,
   animationData: partnersData,
@@ -43,7 +32,7 @@ partnersParams = {
 
 powerOfChoiceParams = {
   container: powerOfChoiceID,
-  renderer: "svg",
+  renderer: 'svg',
   loop: !0,
   autoplay: !0,
   animationData: powerOfChoiceData,
@@ -51,7 +40,7 @@ powerOfChoiceParams = {
 
 usersParams = {
   container: usersID,
-  renderer: "svg",
+  renderer: 'svg',
   loop: !0,
   autoplay: !0,
   animationData: usersData,

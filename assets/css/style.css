@@ -1342,10 +1342,9 @@ footer {
     display: inline-block;
     text-align: center; }
     .animated-icons .icon-box div {
-      margin-bottom: 30px; }
-      .animated-icons .icon-box div img {
-        width: 260px;
-        height: 165px; }
+      margin-bottom: 30px;
+      width: 260px;
+      height: 165px; }
     .animated-icons .icon-box h2 {
       font-size: 20px;
       font-weight: 600; }
@@ -1420,7 +1419,7 @@ footer {
     max-width: 720px;
     position: absolute;
     z-index: 10;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%); }
 
@@ -1685,8 +1684,8 @@ footer {
   .careers-jumbotron .background-animation {
     width: 100%;
     height: 100%; }
-    .careers-jumbotron .background-animation svg {
-      display: block; }
+    .careers-jumbotron .background-animation #joinUs {
+      height: 700px; }
 
 .arrow-down {
   font-size: 20px;
