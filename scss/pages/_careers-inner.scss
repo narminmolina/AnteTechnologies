@@ -1,0 +1,30 @@
+/*!
+=====================================================
+               =   Careers Inner  =
+=====================================================
+*/
+
+.current-position {
+  padding: 70px 0;
+
+  .job-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px;
+
+    .btn-block {
+      display: flex;
+    }
+
+    .btn-fill {
+      padding: 0 75px 0 40px;
+    }
+
+    .position-info-text {
+      margin-top: 50px;
+      line-height: 1.5;
+      color: #202020;
+    }
+  }
+}
