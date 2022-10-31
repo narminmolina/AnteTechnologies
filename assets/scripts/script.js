@@ -1,6 +1,6 @@
 const ready = (callback) => {
-  if (document.readyState != 'loading') callback();
-  else document.addEventListener('DOMContentLoaded', callback);
+  if (document.readyState != "loading") callback();
+  else document.addEventListener("DOMContentLoaded", callback);
 };
 
 ready(() => {
@@ -11,12 +11,12 @@ ready(() => {
     navHeight,
     careersSec,
     btnEndSec,
-    btn = document.querySelector('.btn-sticky');
+    btn = document.querySelector(".btn-sticky");
 
-  if (document.querySelector('.btn-sticky-end')) {
-    buttonEnd = document.querySelector('.btn-sticky-end');
-  } else if (document.querySelector('.our-options')) {
-    buttonEnd = document.querySelector('.our-options');
+  if (document.querySelector(".btn-sticky-end")) {
+    buttonEnd = document.querySelector(".btn-sticky-end");
+  } else if (document.querySelector(".our-options")) {
+    buttonEnd = document.querySelector(".our-options");
   } else return;
 
   function scrollTop(el, value) {
@@ -43,15 +43,19 @@ ready(() => {
   function outerHeight(el) {
     const style = getComputedStyle(el);
 
-    return el.getBoundingClientRect().height + parseFloat(style.getPropertyValue('marginTop')) + parseFloat(style.getPropertyValue('marginBottom'));
+    return (
+      el.getBoundingClientRect().height +
+      parseFloat(style.getPropertyValue("marginTop")) +
+      parseFloat(style.getPropertyValue("marginBottom"))
+    );
   }
 
   function setVars() {
     navPos = offset(btn).top;
     navHeight = outerHeight(btn);
     winPos = scrollTop(window);
-    winWidth = document.querySelector('body').getBoundingClientRect().width;
-    winHeight = document.querySelector('body').getBoundingClientRect().height;
+    winWidth = document.querySelector("body").getBoundingClientRect().width;
+    winHeight = document.querySelector("body").getBoundingClientRect().height;
     if (buttonEnd) {
       btnEndSec = offset(buttonEnd).top - 70;
     }
@@ -69,7 +73,7 @@ ready(() => {
 
   setTimeout(function () {
     // Hide preloader
-    document.querySelector('.preloader').style.visibility = 'hidden';
+    document.querySelector(".preloader").style.visibility = "hidden";
 
     // $('.flying-person-1, .flying-person-2').addClass('flying-person-anime');
     // Update variables
@@ -79,16 +83,17 @@ ready(() => {
   // **********************
   // Sticky Button ************
   // **********************
-  window.addEventListener('resize', setVars);
+  window.addEventListener("resize", setVars);
   // document.querySelector('body').addEventListener('resize', setVars);
-  window.addEventListener('scroll', function () {
+  window.addEventListener("scroll", function () {
     setVars();
     if (winPos > 0 && winPos < btnEndSec && winWidth > 992) {
-      btn.classList.add('fixed', 'active');
-      document.querySelector('.clone-btn-sticky').style.display = 'inline-block';
+      btn.classList.add("fixed", "active");
+      document.querySelector(".clone-btn-sticky").style.display =
+        "inline-block";
     } else {
-      btn.classList.remove('fixed', 'active');
-      document.querySelector('.clone-btn-sticky').style.display = 'none';
+      btn.classList.remove("fixed", "active");
+      document.querySelector(".clone-btn-sticky").style.display = "none";
     }
   });
 });
@@ -106,7 +111,7 @@ wowAnime.init();
 // Swiper ***************
 // **********************
 
-let swipersAll = ['homeSwiper', 'aboutSwiper', 'worksSwiper'],
+let swipersAll = ["homeSwiper", "aboutSwiper", "worksSwiper"],
   swiperId,
   swiperSec,
   swiperExists = false,
@@ -115,18 +120,18 @@ let swipersAll = ['homeSwiper', 'aboutSwiper', 'worksSwiper'],
   winWidth;
 
 for (let i = 0; i < swipersAll.length; i++) {
-  if (document.querySelector('#' + swipersAll[i])) {
+  if (document.querySelector("#" + swipersAll[i])) {
     swiperExists = true;
     swiperId = swipersAll[i];
   }
 }
 if (swiperExists) {
-  swiper = new Swiper('#' + swiperId, {
+  swiper = new Swiper("#" + swiperId, {
     initialSlide: 2,
-    slidesPerView: 'auto',
+    slidesPerView: "auto",
     centeredSlides: true,
     loop: true,
-    loopedSlides: document.querySelectorAll('.swiper-slide').length,
+    loopedSlides: document.querySelectorAll(".swiper-slide").length,
     speed: 1000,
     autoplay: {
       delay: 8000,
@@ -137,12 +142,12 @@ if (swiperExists) {
     // keyboard: true,
     pagination: {
       clickable: true,
-      el: '.swiper-dots',
-      bulletClass: 'swiper-dot',
-      bulletActiveClass: 'active',
-      modifierClass: 'swiper-dot-',
+      el: ".swiper-dots",
+      bulletClass: "swiper-dot",
+      bulletActiveClass: "active",
+      modifierClass: "swiper-dot-",
       renderBullet: function (index, className) {
-        let bulletNum = index++ < 10 ? '0' + index++ : index++;
+        let bulletNum = index++ < 10 ? "0" + index++ : index++;
         return `
           <div class="${className}">
             <span class="number">${bulletNum}</span>
@@ -205,26 +210,26 @@ if (swiperExists) {
 
 //  API Integration:
 
-const container = document.querySelector('.vacancies');
+const vacancies = document.querySelector(".vacancies");
 
-async function getEpisode() {
-  const response = await fetch('https://swapi.dev/api/films/', {
-    method: 'GET',
+async function getEpisode(endpoint = "https://swapi.dev/api/films/") {
+  const response = await fetch(endpoint, {
+    method: "GET",
   });
   const data = await response.json();
   console.log(data);
   return data;
 }
 
-async function applyCardInfo(results) {
-  let data = await getEpisode();
+function applyCardInfo(episodes) {
+  vacancies.innerHTML = "";
+  episodes.results.forEach(({ title, producer, episode_id }) => {
+    console.log({ title, producer, episode_id });
 
-  container.innerHTML = '';
-  data.results.forEach(({ title, producer, episode_id }) => {
-    container.innerHTML += `
+    vacancies.innerHTML += `
  <div class="job" data-department="engineering" data-location="dublin">
         <h2>
-         <a href="careers-inner.html#current-position-anchor">${title}</a>
+         <a href="careers-inner?id=${episode_id}">${title}</a>
       </h2>
         <address>${producer}</address>
         <a href="careers-inner?id=${episode_id}">Apply Now</a>
@@ -232,4 +237,28 @@ async function applyCardInfo(results) {
   });
 }
 
-applyCardInfo();
+const currentPositionTitle = document.querySelector(".current-position h2");
+const positionInfoText = document.querySelector(".position-info-text");
+
+function applyCareerInfo(episode) {
+  currentPositionTitle.innerHTML = episode.title;
+  positionInfoText.innerHTML = episode.opening_crawl;
+}
+
+(async () => {
+  if (vacancies) {
+    const episodes = await getEpisode();
+
+    applyCardInfo(episodes);
+  }
+})();
+
+(async () => {
+  if (window.location.pathname === "/careers-inner") {
+    const id = window.location.search.split("id=")[1];
+
+    const episode = await getEpisode(`https://swapi.dev/api/films/${id}`);
+
+    applyCareerInfo(episode);
+  }
+})();
