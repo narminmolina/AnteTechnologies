@@ -230,11 +230,9 @@ async function applyCardInfo(results) {
          <a href="careers-inner.html#current-position-anchor">${title}</a>
       </h2>
         <address>${location}</address>
-        <a href="careers-inner.html#${id}">Apply Now</a>
+        <a href="careers-inner?id=${id}">Apply Now</a>
        </div>`;
   });
 }
-
-
 
 applyCardInfo();
