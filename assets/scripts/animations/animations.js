@@ -6,13 +6,7 @@ const countriesID = document.getElementById('countries'),
   powerOfChoiceID = document.getElementById('powerOfChoice'),
   usersID = document.getElementById('users');
 
-countriesParams = {
-  container: countriesID,
-  renderer: 'svg',
-  loop: !0,
-  autoplay: !0,
-  animationData: countriesData,
-};
+
 
 joinUsParams = {
   container: joinUsID,
@@ -47,7 +41,13 @@ usersParams = {
 };
 
 if (countriesID) {
-  countries = lottie.loadAnimation(countriesParams);
+  countries = lottie.loadAnimation({
+  container: countriesID,
+  renderer: 'svg',
+  loop: !0,
+  autoplay: !0,
+  animationData: countriesData,
+});
 }
 if (joinUsID) {
   joinUs = lottie.loadAnimation(joinUsParams);

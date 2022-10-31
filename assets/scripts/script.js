@@ -220,17 +220,14 @@ async function applyCardInfo(results) {
   let data = await getEpisode();
 
   container.innerHTML = '';
-  data.results.forEach((obj) => {
-    let title = obj.title;
-    let location = obj.producer;
-    let id = obj.episode_id;
+  data.results.forEach(({ title, producer, episode_id }) => {
     container.innerHTML += `
  <div class="job" data-department="engineering" data-location="dublin">
         <h2>
          <a href="careers-inner.html#current-position-anchor">${title}</a>
       </h2>
-        <address>${location}</address>
-        <a href="careers-inner?id=${id}">Apply Now</a>
+        <address>${producer}</address>
+        <a href="careers-inner?id=${episode_id}">Apply Now</a>
        </div>`;
   });
 }
