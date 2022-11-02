@@ -101,3 +101,171 @@ let wowAnime = new WOW({
   mobile: false,
 });
 wowAnime.init();
+
+// **********************
+// Swiper ***************
+// **********************
+
+let swipersAll = ['homeSwiper', 'aboutSwiper', 'worksSwiper'],
+  swiperId,
+  swiperSec,
+  swiperExists = false,
+  swiperInView = false,
+  swiper,
+  winWidth;
+
+for (let i = 0; i < swipersAll.length; i++) {
+  if (document.querySelector('#' + swipersAll[i])) {
+    swiperExists = true;
+    swiperId = swipersAll[i];
+  }
+}
+if (swiperExists) {
+  swiper = new Swiper('#' + swiperId, {
+    initialSlide: 2,
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    loop: true,
+    loopedSlides: document.querySelectorAll('.swiper-slide').length,
+    speed: 1000,
+    autoplay: {
+      delay: 8000,
+      waitForTransition: false,
+      disableOnInteraction: false,
+    },
+    simulateTouch: winWidth >= 992 ? false : true,
+    // keyboard: true,
+    pagination: {
+      clickable: true,
+      el: '.swiper-dots',
+      bulletClass: 'swiper-dot',
+      bulletActiveClass: 'active',
+      modifierClass: 'swiper-dot-',
+      renderBullet: function (index, className) {
+        let bulletNum = index++ < 10 ? '0' + index++ : index++;
+        return `
+          <div class="${className}">
+            <span class="number">${bulletNum}</span>
+            <svg><circle class="outer" cx="35" cy="35" r="33"/></svg>
+            <span class="bullet"></span>
+          </div>
+        `;
+      },
+    },
+  });
+
+  setTimeout(function () {
+    swiper.slideTo(1);
+  }, 1000);
+
+  function scrollTop(el, value) {
+    if (value === undefined) {
+      return el.pageYOffset;
+    } else {
+      if (el === window || el.nodeType === 9) {
+        el.scrollTo(el.pageXOffset, value);
+      } else {
+        el.pageYOffset = value;
+      }
+    }
+  }
+  window.addEventListener('scroll', function () {
+    let winPos = scrollTop(window);
+    // Return to initial slide for the first time
+    if (swiperExists && !swiperInView && winPos > swiperSec - this.window.height) {
+      swiperInView = true;
+      swiper.slideTo(0);
+    }
+  });
+
+  swiper.on('slideChangeTransitionStart', function () {
+    $('.swiper-dot.active').siblings().removeClass('tick-tack');
+    $('.swiper-dot.active').addClass('tick-tack');
+
+    if (swiper.isEnd) $('.swiper-start').addClass('active');
+    else $('.swiper-start').removeClass('active');
+  });
+
+  let lastSlideId = swiper.slides.length - 1;
+
+  $('.swiper-nav-arrow').on('click touchstart', function () {
+    let $arrow = $(this),
+      prevSlideId,
+      nextSlideId,
+      parentSlideId;
+
+    parentSlideId = $arrow.parent('.swiper-slide').index();
+    (prevSlideId = swiper.realIndex == 0 ? lastSlideId : swiper.realIndex - 1), (nextSlideId = swiper.realIndex == lastSlideId ? 0 : swiper.realIndex + 1);
+
+    switch ($arrow.data('to')) {
+      default:
+      case 'start':
+        swiper.slideTo(0);
+        break;
+      case 'prev':
+        swiper.slideTo(prevSlideId);
+        break;
+      case 'next':
+        swiper.slideTo(nextSlideId);
+        break;
+      case 'slide':
+        swiper.slideTo(parentSlideId);
+        break;
+    }
+  });
+}
+
+//  API Integration:
+
+const vacancies = document.querySelector('.vacancies');
+
+async function getEpisode(endpoint = 'https://swapi.dev/api/films/') {
+  const response = await fetch(endpoint, {
+    method: 'GET',
+  });
+  const data = await response.json();
+  console.log(data);
+  return data;
+}
+
+function applyCardInfo(episodes) {
+  vacancies.innerHTML = '';
+  episodes.results.forEach(({ title, producer, episode_id }) => {
+    console.log({ title, producer, episode_id });
+
+    vacancies.innerHTML += `
+ <div class="job" data-department="engineering" data-location="dublin">
+        <h2>
+         <a href="careers-inner?id=${episode_id}">${title}</a>
+      </h2>
+        <address>${producer}</address>
+        <a href="careers-inner?id=${episode_id}">Apply Now</a>
+       </div>`;
+  });
+}
+
+const currentPositionTitle = document.querySelector('.current-position h2');
+const positionInfoText = document.querySelector('.position-info-text');
+
+function applyCareerInfo(episode) {
+  currentPositionTitle.innerHTML = episode.title;
+  positionInfoText.innerHTML = episode.opening_crawl;
+}
+
+(async () => {
+  if (vacancies) {
+    const episodes = await getEpisode();
+
+    applyCardInfo(episodes);
+  }
+})();
+
+(async () => {
+  if (window.location.pathname === '/careers-inner') {
+    const id = window.location.search.split('id=')[1];
+
+    const episode = await getEpisode(`https://swapi.dev/api/films/${id}`);
+
+    applyCareerInfo(episode);
+  }
+})();
