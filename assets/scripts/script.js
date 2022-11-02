@@ -1,6 +1,6 @@
 const ready = (callback) => {
-  if (document.readyState != "loading") callback();
-  else document.addEventListener("DOMContentLoaded", callback);
+  if (document.readyState != 'loading') callback();
+  else document.addEventListener('DOMContentLoaded', callback);
 };
 
 ready(() => {
@@ -11,12 +11,12 @@ ready(() => {
     navHeight,
     careersSec,
     btnEndSec,
-    btn = document.querySelector(".btn-sticky");
+    btn = document.querySelector('.btn-sticky');
 
-  if (document.querySelector(".btn-sticky-end")) {
-    buttonEnd = document.querySelector(".btn-sticky-end");
-  } else if (document.querySelector(".our-options")) {
-    buttonEnd = document.querySelector(".our-options");
+  if (document.querySelector('.btn-sticky-end')) {
+    buttonEnd = document.querySelector('.btn-sticky-end');
+  } else if (document.querySelector('.our-options')) {
+    buttonEnd = document.querySelector('.our-options');
   } else return;
 
   function scrollTop(el, value) {
@@ -43,19 +43,15 @@ ready(() => {
   function outerHeight(el) {
     const style = getComputedStyle(el);
 
-    return (
-      el.getBoundingClientRect().height +
-      parseFloat(style.getPropertyValue("marginTop")) +
-      parseFloat(style.getPropertyValue("marginBottom"))
-    );
+    return el.getBoundingClientRect().height + parseFloat(style.getPropertyValue('marginTop')) + parseFloat(style.getPropertyValue('marginBottom'));
   }
 
   function setVars() {
     navPos = offset(btn).top;
     navHeight = outerHeight(btn);
     winPos = scrollTop(window);
-    winWidth = document.querySelector("body").getBoundingClientRect().width;
-    winHeight = document.querySelector("body").getBoundingClientRect().height;
+    winWidth = document.querySelector('body').getBoundingClientRect().width;
+    winHeight = document.querySelector('body').getBoundingClientRect().height;
     if (buttonEnd) {
       btnEndSec = offset(buttonEnd).top - 70;
     }
@@ -73,7 +69,7 @@ ready(() => {
 
   setTimeout(function () {
     // Hide preloader
-    document.querySelector(".preloader").style.visibility = "hidden";
+    document.querySelector('.preloader').style.visibility = 'hidden';
 
     // $('.flying-person-1, .flying-person-2').addClass('flying-person-anime');
     // Update variables
@@ -83,17 +79,16 @@ ready(() => {
   // **********************
   // Sticky Button ************
   // **********************
-  window.addEventListener("resize", setVars);
+  window.addEventListener('resize', setVars);
   // document.querySelector('body').addEventListener('resize', setVars);
-  window.addEventListener("scroll", function () {
+  window.addEventListener('scroll', function () {
     setVars();
     if (winPos > 0 && winPos < btnEndSec && winWidth > 992) {
-      btn.classList.add("fixed", "active");
-      document.querySelector(".clone-btn-sticky").style.display =
-        "inline-block";
+      btn.classList.add('fixed', 'active');
+      document.querySelector('.clone-btn-sticky').style.display = 'inline-block';
     } else {
-      btn.classList.remove("fixed", "active");
-      document.querySelector(".clone-btn-sticky").style.display = "none";
+      btn.classList.remove('fixed', 'active');
+      document.querySelector('.clone-btn-sticky').style.display = 'none';
     }
   });
 });
@@ -111,7 +106,7 @@ wowAnime.init();
 // Swiper ***************
 // **********************
 
-let swipersAll = ["homeSwiper", "aboutSwiper", "worksSwiper"],
+let swipersAll = ['homeSwiper', 'aboutSwiper', 'worksSwiper'],
   swiperId,
   swiperSec,
   swiperExists = false,
@@ -120,18 +115,18 @@ let swipersAll = ["homeSwiper", "aboutSwiper", "worksSwiper"],
   winWidth;
 
 for (let i = 0; i < swipersAll.length; i++) {
-  if (document.querySelector("#" + swipersAll[i])) {
+  if (document.querySelector('#' + swipersAll[i])) {
     swiperExists = true;
     swiperId = swipersAll[i];
   }
 }
 if (swiperExists) {
-  swiper = new Swiper("#" + swiperId, {
+  swiper = new Swiper('#' + swiperId, {
     initialSlide: 2,
-    slidesPerView: "auto",
+    slidesPerView: 'auto',
     centeredSlides: true,
     loop: true,
-    loopedSlides: document.querySelectorAll(".swiper-slide").length,
+    loopedSlides: document.querySelectorAll('.swiper-slide').length,
     speed: 1000,
     autoplay: {
       delay: 8000,
@@ -142,12 +137,12 @@ if (swiperExists) {
     // keyboard: true,
     pagination: {
       clickable: true,
-      el: ".swiper-dots",
-      bulletClass: "swiper-dot",
-      bulletActiveClass: "active",
-      modifierClass: "swiper-dot-",
+      el: '.swiper-dots',
+      bulletClass: 'swiper-dot',
+      bulletActiveClass: 'active',
+      modifierClass: 'swiper-dot-',
       renderBullet: function (index, className) {
-        let bulletNum = index++ < 10 ? "0" + index++ : index++;
+        let bulletNum = index++ < 10 ? '0' + index++ : index++;
         return `
           <div class="${className}">
             <span class="number">${bulletNum}</span>
@@ -163,58 +158,70 @@ if (swiperExists) {
     swiper.slideTo(1);
   }, 1000);
 
-  // $(window).on('scroll', function () {
-  //   // Return to initial slide for the first time
-  //   if (swiperExists && !swiperInView && winPos > swiperSec - winHeight) {
-  //     swiperInView = true;
-  //     swiper.slideTo(0);
-  //   }
-  // });
+  function scrollTop(el, value) {
+    if (value === undefined) {
+      return el.pageYOffset;
+    } else {
+      if (el === window || el.nodeType === 9) {
+        el.scrollTo(el.pageXOffset, value);
+      } else {
+        el.pageYOffset = value;
+      }
+    }
+  }
+  window.addEventListener('scroll', function () {
+    let winPos = scrollTop(window);
+    // Return to initial slide for the first time
+    if (swiperExists && !swiperInView && winPos > swiperSec - this.window.height) {
+      swiperInView = true;
+      swiper.slideTo(0);
+    }
+  });
 
-  // swiper.on('slideChangeTransitionStart', function () {
-  //   $('.swiper-dot.active').siblings().removeClass('tick-tack');
-  //   $('.swiper-dot.active').addClass('tick-tack');
+  swiper.on('slideChangeTransitionStart', function () {
+    $('.swiper-dot.active').siblings().removeClass('tick-tack');
+    $('.swiper-dot.active').addClass('tick-tack');
 
-  //   if (swiper.isEnd) $('.swiper-start').addClass('active');
-  //   else $('.swiper-start').removeClass('active');
-  // });
+    if (swiper.isEnd) $('.swiper-start').addClass('active');
+    else $('.swiper-start').removeClass('active');
+  });
 
   let lastSlideId = swiper.slides.length - 1;
 
-  // $('.swiper-nav-arrow').on('click touchstart', function () {
-  //   let $arrow = $(this),
-  //     prevSlideId,
-  //     nextSlideId,
-  //     parentSlideId;
+  $('.swiper-nav-arrow').on('click touchstart', function () {
+    let $arrow = $(this),
+      prevSlideId,
+      nextSlideId,
+      parentSlideId;
 
-  //   parentSlideId = $arrow.parent('.swiper-slide').index();
-  //   (prevSlideId = swiper.realIndex == 0 ? lastSlideId : swiper.realIndex - 1), (nextSlideId = swiper.realIndex == lastSlideId ? 0 : swiper.realIndex + 1);
+    parentSlideId = $arrow.parent('.swiper-slide').index();
+    (prevSlideId = swiper.realIndex == 0 ? lastSlideId : swiper.realIndex - 1), (nextSlideId = swiper.realIndex == lastSlideId ? 0 : swiper.realIndex + 1);
 
-  //   switch ($arrow.data('to')) {
-  //     default:
-  //     case 'start':
-  //       swiper.slideTo(0);
-  //       break;
-  //     case 'prev':
-  //       swiper.slideTo(prevSlideId);
-  //       break;
-  //     case 'next':
-  //       swiper.slideTo(nextSlideId);
-  //       break;
-  //     case 'slide':
-  //       swiper.slideTo(parentSlideId);
-  //       break;
-  //   }
-  // });
+    switch ($arrow.data('to')) {
+      default:
+      case 'start':
+        swiper.slideTo(0);
+        break;
+      case 'prev':
+        swiper.slideTo(prevSlideId);
+        break;
+      case 'next':
+        swiper.slideTo(nextSlideId);
+        break;
+      case 'slide':
+        swiper.slideTo(parentSlideId);
+        break;
+    }
+  });
 }
 
 //  API Integration:
 
-const vacancies = document.querySelector(".vacancies");
+const vacancies = document.querySelector('.vacancies');
 
-async function getEpisode(endpoint = "https://swapi.dev/api/films/") {
+async function getEpisode(endpoint = 'https://swapi.dev/api/films/') {
   const response = await fetch(endpoint, {
-    method: "GET",
+    method: 'GET',
   });
   const data = await response.json();
   console.log(data);
@@ -222,7 +229,7 @@ async function getEpisode(endpoint = "https://swapi.dev/api/films/") {
 }
 
 function applyCardInfo(episodes) {
-  vacancies.innerHTML = "";
+  vacancies.innerHTML = '';
   episodes.results.forEach(({ title, producer, episode_id }) => {
     console.log({ title, producer, episode_id });
 
@@ -237,8 +244,8 @@ function applyCardInfo(episodes) {
   });
 }
 
-const currentPositionTitle = document.querySelector(".current-position h2");
-const positionInfoText = document.querySelector(".position-info-text");
+const currentPositionTitle = document.querySelector('.current-position h2');
+const positionInfoText = document.querySelector('.position-info-text');
 
 function applyCareerInfo(episode) {
   currentPositionTitle.innerHTML = episode.title;
@@ -254,8 +261,8 @@ function applyCareerInfo(episode) {
 })();
 
 (async () => {
-  if (window.location.pathname === "/careers-inner") {
-    const id = window.location.search.split("id=")[1];
+  if (window.location.pathname === '/careers-inner') {
+    const id = window.location.search.split('id=')[1];
 
     const episode = await getEpisode(`https://swapi.dev/api/films/${id}`);
 

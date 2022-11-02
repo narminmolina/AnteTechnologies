@@ -210,3 +210,129 @@
     }
   }
 }
+
+  .swiper-dots {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 165px;
+
+    .swiper-dot {
+      position: relative;
+      width: 34px;
+      height: 34px;
+      transition: width .3s ease;
+      cursor: pointer;
+
+      &.active {
+        outline: none;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 68px;
+        height: 68px;
+        border: 1px solid $gray;
+        border-radius: 50%;
+        opacity: .3;
+      }
+
+      svg {
+        display: block;
+        position: relative;
+        width: 70px;
+        height: 70px;
+        fill: transparent;
+        stroke: $black;
+        stroke-width: 2px;
+        stroke-dasharray: 210;
+        stroke-dashoffset: 210;
+      }
+
+      .bullet {
+        width: 7px;
+        height: 7px;
+        background-color: #000;
+        border-radius: 50%;
+      }
+
+      .number {
+        color: $dark-gray;
+        font-size: $ftz-extra-large;
+      }
+
+      &::before,
+      span,
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: 0 0 0;
+        transform: scale(0) translate(-50%, -50%);
+        transition: background-color .3s ease, transform .3s ease;
+      }
+
+      .bullet {
+        transform: scale(1) translate(-50%, -50%);
+      }
+
+      &.tick-tack {
+        width: 70px;
+        height: 70px;
+        margin: 0 7px 4px;
+        background-color: transparent;
+        transform: scale(1);
+
+        svg {
+          stroke-dashoffset: 0;
+          transition: stroke-dashoffset 7.7s linear .3s, transform .3s ease;
+        }
+
+        &::before,
+        .number,
+        svg {
+          transform: scale(1) translate(-50%, -50%);
+        }
+
+        .bullet {
+          transform: scale(0) translate(-50%, -50%);
+        }
+      }
+    }
+  }
+  .swiper-nav-arrow {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 100%;
+  width: 50px;
+  height: 50px;
+  background-image: url('../img/layers/slider-arrow-left.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 0;
+  transition: left 1s ease, opacity .3s ease;
+  cursor: pointer;
+
+  &.swiper-start {
+    left: auto;
+    right: 175px;
+    background-image: url('../img/layers/slider-arrow-right.svg');
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity .3s ease;
+    pointer-events: none;
+
+    &.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+   
+  }
+}
